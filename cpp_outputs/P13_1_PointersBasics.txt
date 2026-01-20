@@ -1,3 +1,3 @@
-Value at ptr = 0x7ffc6646e56c
+Value at ptr = 0x7ffc8d6dc2bc
 Value at var = 20
 Value at *ptr = 20

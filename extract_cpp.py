@@ -1,6 +1,190 @@
 import os
 
 cpp_code = {
+    "P11_1_FunctionOverloading": """#include <iostream>
+using namespace std;
+class Temp
+{
+private:
+int x = 10;
+double x1 = 10.1;
+public:
+void add(int y)
+{
+cout << "Value of x + y is: " << x + y << endl;
+}
+// Differ in the type of argument.
+void add(double d)
+{
+cout << "Value of x1 + d is: " << x1 + d << endl;
+}
+// Differ in the number of arguments.
+void add(int y, int z)
+{
+cout << "Value of x + y + z is: " << x + y + z << endl;
+}
+};
+int main()
+{
+Temp t1;
+t1.add(10);
+t1.add(11.1);
+t1.add(12,13);
+return 0;
+}""",
+    "P11_2_OperatorOverloading": """#include <iostream>
+using namespace std;
+class Math
+{
+int num;
+public:
+// setter to set value
+void setValue(int val)
+{
+num = val;
+}
+// overloading + operator to add values in two objects
+Math operator + (Math &obj) {
+Math temp;
+temp.num = num + obj.num;
+return (temp);
+}
+// overloading - operator to subtract values in two objects
+Math operator - (Math &obj){
+Math temp;
+temp.num = num - obj.num;
+return (temp);
+}
+// overloading * operator to multiply values in two objects
+Math operator * (Math &obj){
+Math temp;
+temp.num = num * obj.num;
+return (temp);
+}
+// overloading / operator to divide values in two objects
+Math operator / (Math &obj){
+Math temp;
+temp.num = num / obj.num;
+return (temp);
+}
+// display result value getter
+void getValue(){cout << num;
+}
+};
+int main ()
+{
+// created objects obj1 and obj2 to perform mathematical operations and resObj to store results
+Math obj1, obj2, resObj;
+// accepting the values
+obj1.setValue(20);
+obj2.setValue(10);
+cout << "Obj 1: ";
+obj1.getValue();
+cout << "\\nObj 2: ";
+obj2.getValue();
+// assign result of obj1 and obj2 to resObj addition
+resObj = obj1 + obj2;
+cout << "\\n\\nObj1 + Obj2 : " ;
+resObj.getValue();
+// subtraction
+resObj = obj1 - obj2;
+cout << "\\nObj1 - Obj2 : " ;
+resObj.getValue();
+// multiplication
+resObj = obj1 * obj2;
+cout << "\\nObj1 * Obj2 : " ;
+resObj.getValue();
+// division
+resObj = obj1 / obj2;
+cout << "\\nObj1 / Obj2 : " ;
+resObj.getValue();
+return 0;
+}""",
+    "P11_3_FunctionOverriding": """#include <iostream>
+using namespace std;
+class Exam { // base class declaration.
+public:
+void colorP(){
+cout<<"Black";
+}
+};
+class Atkt: public Exam // inheriting Exam class.
+{
+public:
+void colorP(){
+cout<<"Grey";
+}
+};
+int main(void) {
+Atkt kt;
+kt.colorP();
+}""",
+    "P11_4_PureVirtualFunction": """#include <iostream>
+using namespace std;
+// Abstract class
+class Shape
+{
+public:
+virtual float calculateArea() = 0; // pure virtual function.
+};
+class Square : public Shape
+{
+float a;
+public:
+Square(float l)
+{
+a = l;
+}
+float calculateArea()
+{
+return a*a;
+}
+};
+class Circle : public Shape
+{
+float r;
+public:
+Circle(float x)
+{
+r = x;
+}
+float calculateArea()
+{
+return 3.14*r*r ;
+}
+};
+class Rectangle : public Shape
+{
+float l;
+float b;
+public:
+Rectangle(float x, float y)
+{
+l=x;
+b=y;
+}
+float calculateArea()
+{
+return l*b;
+}
+};
+int main()
+{
+Shape *shape;
+Square s(3.4);
+Rectangle r(5,6);
+Circle c(7.8);
+shape =&s;
+int a1 =shape->calculateArea();
+shape = &r;
+int a2 = shape->calculateArea();
+shape = &c;
+int a3 = shape->calculateArea();
+cout << "Area of the square is " <<a1<< endl;
+cout << "Area of the rectangle is " <<a2<< endl;
+cout << "Area of the circle is " <<a3<<endl;
+return 0;
+}""",
     "P12_ThisPointer": """#include <iostream>
 using namespace std;
 class Employee {
@@ -230,4 +414,4 @@ os.makedirs("cpp_practicals", exist_ok=True)
 for name, code in cpp_code.items():
     with open(f"cpp_practicals/{name}.cpp", "w") as f:
         f.write(code)
-print("Extracted 10 C++ files.")
+print("Extracted 14 C++ files.")

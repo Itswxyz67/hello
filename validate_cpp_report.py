@@ -13,11 +13,11 @@ def validate():
             h1_count += 1
 
     print(f"Found {h1_count} Heading 1 entries.")
-    if h1_count == 10:
-        print("Validation successful: All 10 practicals are represented.")
+    if h1_count == 14:
+        print("Validation successful: All 14 practicals are represented.")
         return True
     else:
-        print(f"Validation failed: Expected 10 Heading 1 entries, but found {h1_count}.")
+        print(f"Validation failed: Expected 14 Heading 1 entries, but found {h1_count}.")
         return False
 
 if __name__ == "__main__":
