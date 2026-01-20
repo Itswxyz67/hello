@@ -1,0 +1,9 @@
+Before:
+5
+10
+In function:
+10
+ 5
+After:
+10
+ 5
