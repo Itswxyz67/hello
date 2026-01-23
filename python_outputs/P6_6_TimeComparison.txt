@@ -1,0 +1,3 @@
+Time using find(): 0.002653748000284395
+Time using regex: 0.008929111999805173
+Time using brute force: 0.05979991999993217
