@@ -1,9 +1,0 @@
-Before Sapping :
- 5
- 10
- In function:
-10
- 5
- After Swapping:
- 5
- 10

@@ -1,3 +1,0 @@
-Value of x + y is: 20
-Value of x1 + d is: 21.2
-Value of x + y + z is: 35

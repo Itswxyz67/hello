@@ -1,7 +1,0 @@
-Obj 1: 20
-Obj 2: 10
-
-Obj1 + Obj2 : 30
-Obj1 - Obj2 : 10
-Obj1 * Obj2 : 200
-Obj1 / Obj2 : 2
